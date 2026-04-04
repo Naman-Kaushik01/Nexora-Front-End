@@ -140,10 +140,7 @@ export const apiService = {
     getTransactionById: (id) => {
         return api.get(`/audit/transactions/by-id?id=${id}`);
     },
-    // Get transactions by date range
-    getTransactionsByDateRange: (startDate, endDate) => {
-        return api.get(`/audit/transactions/by-date?start=${startDate}&end=${endDate}`);
-    }
+    
 }
 
 
