@@ -57,6 +57,34 @@ const Profile = () => {
             setUploading(false);
         }
     }
+
+    const handleFileSelect = (event) => {
+        const file = event.target.files[0];
+        if(file){
+            //Validate file type
+
+            if(!file.type.startsWith('image/')){
+                setError('Please select a valid image file.');
+                return;
+            }
+
+            //validate file size (e.g., max 5MB)
+
+            if(file.size > 5 * 1024 * 1024){
+                setError('File size exceeds the 5MB limit.');
+                return;
+            }
+
+            uploadProfilePictueFile(file);
+
+        }
+    }
+    const triggerFileInput = () => {
+        fileInputRef.current?.click();
+    };
+
+    
+
 }
 
 export default Profile;
