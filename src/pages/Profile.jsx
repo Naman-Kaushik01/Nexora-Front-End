@@ -32,8 +32,31 @@ const Profile = () => {
             setLoading(false);
         }
     }
+    const uploadProfilePictueFile = async (file) => {
+        setUploading(true);
+        setError('');
+        setSuccess('');
+        try{
+            const response = await apiService.uploadProfilePicture(file);
+            
+            if(response.data.statusCode === 200){
+                setSuccess('Profile picture updated successfully!');
+                await fetchUserProfile();
 
+                setTimeout(() => {
+                    setSuccess('');
+                },4000);
+            }else{
+                setError(response.data.message);
+            }
 
+        }catch(err){
+            setError(error.response?.data?.message || 'An error occurred while uploading profile picture.');
+        }
+        finally{
+            setUploading(false);
+        }
+    }
 }
 
 export default Profile;
