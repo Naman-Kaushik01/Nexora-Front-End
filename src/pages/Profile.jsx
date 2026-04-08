@@ -132,7 +132,7 @@ const Profile = () => {
                     <div className="profile-picture-upload">
                         <div className="profile-picture">
                             <img
-                                src={userData.profilePictureUrl}
+                                src={userData.profilePictureURL}
                                 alt="Profile"
                             />
                         </div>
