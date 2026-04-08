@@ -90,7 +90,7 @@ export const apiService = {
         const formData = new FormData();
         formData.append('file', file);
 
-        return api.post('/users/profile-picture', formData, {
+        return api.put('/users/profile-picture', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data',
             },
