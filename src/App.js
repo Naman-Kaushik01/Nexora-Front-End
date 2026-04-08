@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Profile from "./pages/Profile";
+import UpdateProfile from "./pages/UpdateProfile";
 
 
 function App() {
@@ -18,6 +19,8 @@ function App() {
        <Route path="/home" element ={<Home/>} />
        <Route path="/" element ={<Home/>} />
        <Route path="/profile" element ={<Profile/>} />
+       <Route path="/update-profile" element ={<UpdateProfile/>} />
+    
 
        
         <Route path="*" element ={<NotFound/>} />
