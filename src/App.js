@@ -10,6 +10,7 @@ import UpdateProfile from "./pages/UpdateProfile";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import Transactions from "./pages/Transactions";
+import Transfer from "./pages/Transfer";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
        <Route path="/forgot-password" element ={<ForgotPassword/>} />
        <Route path="/reset-password" element ={<ResetPassword/>} />
        <Route path="/transactions" element ={<Transactions/>} />
+       <Route path="/transfer" element ={<Transfer/>} />
     
 
        
