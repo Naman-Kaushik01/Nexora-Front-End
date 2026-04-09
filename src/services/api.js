@@ -109,9 +109,8 @@ export const apiService = {
         return api.post('/transactions', transferData)
     },
 
-    //GET TRANSACTIONS
-
-    getTransactions:(accountNumber , page = 0, size = 10)=>{
+    // Get transactions for an account
+    getTransactions: (accountNumber, page = 0, size = 10) => {
         return api.get(`/transactions/${accountNumber}?page=${page}&size=${size}`);
     },
 
