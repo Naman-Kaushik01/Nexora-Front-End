@@ -100,7 +100,7 @@ const Transactions = () => {
             sign = '+';
         }
 
-        return `${sign}$${Math.abs(amount).toFixed(2)}`;
+        return `${sign}₹${Math.abs(amount).toFixed(2)}`;
     };
 
 
