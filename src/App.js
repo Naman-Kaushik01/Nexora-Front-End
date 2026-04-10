@@ -12,6 +12,7 @@ import ResetPassword from "./pages/ResetPassword";
 import Transactions from "./pages/Transactions";
 import Transfer from "./pages/Transfer";
 import AuditorDashboard from "./pages/AuditorDashboard";
+import { CustomerRoute ,AuditorRoute} from "./services/Guard";
 
 
 function App() {
@@ -23,13 +24,22 @@ function App() {
       <Route path="/login" element ={<Login />} />
        <Route path="/home" element ={<Home/>} />
        <Route path="/" element ={<Home/>} />
-       <Route path="/profile" element ={<Profile/>} />
-       <Route path="/update-profile" element ={<UpdateProfile/>} />
+
+       
+       <Route path="/profile"element={<CustomerRoute element ={<Profile/>} />} /> 
+       <Route path="/update-profile" element={<CustomerRoute element={<UpdateProfile />} />} />
+
+
        <Route path="/forgot-password" element ={<ForgotPassword/>} />
        <Route path="/reset-password" element ={<ResetPassword/>} />
-       <Route path="/transactions" element ={<Transactions/>} />
-       <Route path="/transfer" element ={<Transfer/>} />
-       <Route path="/auditor-dashboard" element ={<AuditorDashboard/>} />
+
+
+       <Route path="/transactions" element={<CustomerRoute element={<Transactions />} />} />
+       <Route path="/transfer" element={<CustomerRoute element={<Transfer />} />} />
+
+
+
+       <Route path="/auditor-dashboard" element={<AuditorRoute element={<AuditorDashboard />} />} />
     
 
        
