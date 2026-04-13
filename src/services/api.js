@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:8080/api";
+const API_BASE_URL = "13.60.232.89:8090/api";
 
 //create an instance of axios with the base URL and default headers
 
