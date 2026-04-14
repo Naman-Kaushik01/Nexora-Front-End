@@ -141,6 +141,7 @@ export const apiService = {
     },
     
 }
+console.log("API URL:", API_BASE_URL);
 
 
 export default api;
