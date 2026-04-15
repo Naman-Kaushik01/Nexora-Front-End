@@ -12,6 +12,7 @@ import ResetPassword from "./pages/ResetPassword";
 import Transactions from "./pages/Transactions";
 import Transfer from "./pages/Transfer";
 import AuditorDashboard from "./pages/AuditorDashboard";
+import Deposit from "./pages/Deposit";
 import { CustomerRoute ,AuditorRoute} from "./services/Guard";
 
 
@@ -40,6 +41,7 @@ function App() {
 
 
        <Route path="/auditor-dashboard" element={<AuditorRoute element={<AuditorDashboard />} />} />
+       <Route path="/deposit" element={<AuditorRoute element={<Deposit />} />} />
     
 
        
