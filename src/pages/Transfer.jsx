@@ -184,12 +184,25 @@ const Transfer = () => {
         }
     }
 
-    const formatCurrency = (amount, currency = 'USD') => {
-        return new Intl.NumberFormat('en-US', {
-            style: 'currency',
-            currency: currency
-        }).format(amount);
+    const formatCurrency = (amount, currency = 'RUPEES') => {
+    const currencyMap = {
+        RUPEES: 'INR',
+        USD: 'USD',
+        EUR: 'EUR',
+        NGN: 'NGN'
     };
+
+    const mappedCurrency = currencyMap[currency] || currency;
+
+    try {
+        return new Intl.NumberFormat('en-IN', {
+            style: 'currency',
+            currency: mappedCurrency
+        }).format(amount);
+    } catch {
+        return `₹${amount}`;
+    }
+};
 
 
 
@@ -253,7 +266,7 @@ const Transfer = () => {
                                 <div className="account-details">
                                     <p><strong>Account Type:</strong> {destinationAccountInfo.accountType}</p>
                                     <p><strong>Account Number:</strong> {destinationAccountInfo.accountNumber}</p>
-                                    <p><strong>Status:</strong> <span className={`status ${destinationAccountInfo.status.toLowerCase()}`}>{destinationAccountInfo.status}</span></p>
+                                    <p><strong>Status:</strong> <span className={`status ${destinationAccountInfo.accountStatus.toLowerCase()}`}>{destinationAccountInfo.status}</span></p>
                                 </div>
                             </div>
                         )}

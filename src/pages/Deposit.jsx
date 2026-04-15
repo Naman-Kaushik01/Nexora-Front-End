@@ -50,7 +50,7 @@ const Deposit = () => {
                 setAccountInfo(account);
                 setSuccess(`Account found: ${account.accountType} Account - ${account.accountNumber}`);
                 //fetch recent transactions
-                fetchRecentTransactions();
+                fetchRecentTransactions(account.accountNumber);
             } else {
                 setError(response.error);
             }
@@ -79,11 +79,24 @@ const Deposit = () => {
 
 
     const formatCurrency = (amount, currency = 'RUPEES') => {
-        return new Intl.NumberFormat('en-INR', {
-            style: 'currency',
-            currency: currency
-        }).format(amount);
+    const currencyMap = {
+        RUPEES: 'INR',
+        USD: 'USD',
+        EUR: 'EUR',
+        NGN: 'NGN'
     };
+
+    const mappedCurrency = currencyMap[currency] || currency;
+
+    try {
+        return new Intl.NumberFormat('en-IN', {
+            style: 'currency',
+            currency: mappedCurrency
+        }).format(amount);
+    } catch {
+        return `₹${amount}`;
+    }
+};
 
     const formatDate = (dateString) => {
         return new Date(dateString).toLocaleString();
