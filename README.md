@@ -210,6 +210,6 @@ Contributions are welcome!
 
 ## 👨‍💻 Author
 
-**Your Name**
+**Naman Kaushik**
 
 Built with ❤️ using React, JWT Authentication, and modern web technologies.
